@@ -10,10 +10,10 @@ build:
 
 run:
 	@echo '--- 🐳 Running container image...'
-	docker run --rm $(APP_NAME)
+	docker run --rm $(APP_NAME):$(CONTAINER_TAG)
 .PHONY: run
 
 smoketest:
 	@echo '--- 🐳 Running container smoke test...'
-	docker run --rm $(APP_NAME) --help
+	docker run --rm $(APP_NAME):$(CONTAINER_TAG) --help
 .PHONY: smoketest
